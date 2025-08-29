@@ -31,12 +31,29 @@ def parentheses(sequence):
             newList.append(char)        # Then we append it to newList and newList now has an open parenthesis in it.
         elif char == ")":               # If char is a closed parenthesis
             if not newList:             # and if newList is empty
-                return False            # it returns False because there is no open parenthesis to balance it out
+                print("False")          # it prints False because there is no open parenthesis to balance it out
+                return                
             else:
                 newList.pop()           # If there is an open parenthesis to match with the closed one, we remove the last element in the list
-    print(len(newList) == 0)            # If the length of the list is 0, there are no unbalanced parentheses and it will return True.
 
-parentheses("()")
+    print(len(newList) == 0)                # If the length of the list is 0, there are no unbalanced parentheses and it will return True.
+
+#parentheses("(()")
 
 # Exercise 2 (version 2)
-#def parentheses(sequence):
+
+def parentheses2(sequence):          
+    counter = 0                      # Create a counter at zero
+
+    for char in sequence:            # iterate through all characters in sequence
+        if char == "(":              # if char is an open parenthesis,
+            counter += 1             # you increase the counter variable by 1
+        elif char == ")":            # if char is a closed parenthesis,
+            counter -= 1             # you decreases the counter variable by 1
+            if counter < 0:          # However, if it is a closed parenthesis and the counter is less than zero, it means that there is a closed
+                print(False)         # parenthesis that is not matched by an open one. False is printed
+                return
+    print(counter == 0)              # Otherwise, if False isn't already printed, we will print whether or not the counter is zero. If not, it
+                                     # will print False as well because there is an imbalance.
+parentheses("(()")
+parentheses2("(())")
