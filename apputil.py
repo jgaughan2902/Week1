@@ -1,16 +1,12 @@
+def palindrome(word):
+    word = word.lower()
+    i, j = 0, (len(word) - 1)
+    while i < j and word[i].isalnum() and word[j].isalnum():
+        if word[i] == word[j]:
+            i += 1
+            j -= 1
+        else:
+            return False
+    return True
 
-x = "Hello World"
-
-if 'H' in x:
-    print("TRUE")
-else:
-    print("FALSE")
-# add code below ...
-
-x = []
-i = 0
-
-while i < 10:
-    x.append(i)
-    i += 1
-print(x)
+palindrome("Sit on a potato pan, Otis.s")
