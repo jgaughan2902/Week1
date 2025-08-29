@@ -20,3 +20,20 @@ def palindrome(word):
     print(True)                                # If False is never returned, it will print True because the loop was successfully completed.
 
 palindrome("Sit on a potato pan, Otis.s")        # Should show True, and it does
+
+# Exercise 2
+
+def parentheses(sequence):
+    newList = []                     # Create a new, empty list
+
+    for char in sequence:             # A for loop that iterates through each character in sequence
+        if char == "(":               # If char is an open parentheses
+            newList.append(char)        # Then we append it to newList and newList now has an open parenthesis in it.
+        elif char == ")":               # If char is a closed parenthesis
+            if not newList:             # and if newList is empty
+                return False            # it returns False because there is no open parenthesis to balance it out
+            else:
+                newList.pop()           # If there is an open parenthesis to match with the closed one, we remove the last element in the list
+    print(len(newList) == 0)            # If the length of the list is 0, there are no unbalanced parentheses and it will return True.
+
+parentheses("()))")
