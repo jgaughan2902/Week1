@@ -19,9 +19,9 @@ def palindrome(word):
             return                       
     print(True)                                # If False is never returned, it will print True because the loop was successfully completed.
 
-palindrome("Sit on a potato pan, Otis.s")        # Should show True, and it does
+#palindrome("Sit on a potato pan, Otis.")        # Should show True, and it does
 
-# Exercise 2
+# Exercise 2 (version 1)
 
 def parentheses(sequence):
     newList = []                     # Create a new, empty list
@@ -36,4 +36,7 @@ def parentheses(sequence):
                 newList.pop()           # If there is an open parenthesis to match with the closed one, we remove the last element in the list
     print(len(newList) == 0)            # If the length of the list is 0, there are no unbalanced parentheses and it will return True.
 
-parentheses("()))")
+parentheses("()")
+
+# Exercise 2 (version 2)
+#def parentheses(sequence):
