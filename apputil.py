@@ -1,12 +1,19 @@
 def palindrome(word):
     word = word.lower()
-    i, j = 0, (len(word) - 1)
-    while i < j and word[i].isalnum() and word[j].isalnum():
-        if word[i] == word[j]:
+    newString = ''
+    for char in word:
+        if char.isalnum():
+            newString += char
+        else:
+            continue
+
+    i, j = 0, len(newString) - 1
+    while i < j:
+        if newString[i] == newString[j]:
             i += 1
             j -= 1
         else:
             return False
     return True
 
-palindrome("Sit on a potato pan, Otis.s")
+palindrome("Sit on a potato pan, Otis")
