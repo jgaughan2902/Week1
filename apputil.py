@@ -15,9 +15,8 @@ def palindrome(word):
             i += 1                             # you increase counter i one so it goes to the next letter in newString
             j -= 1                             # and you decrease counter j one too so it goes to the next letter in newString
         else:
-            print(False)                       # If the ith and jth index aren't the same, then the word isn't a palindrome. It'll return False
-            return                       
-    print(True)                                # If False is never returned, it will print True because the loop was successfully completed.
+            return False                      
+    return True                               # If False is never returned, it will print True because the loop was successfully completed.
 
 
 # Exercise 2 (version 1)
@@ -30,12 +29,11 @@ def parentheses(sequence):
             newList.append(char)        # Then we append it to newList and newList now has an open parenthesis in it.
         elif char == ")":               # If char is a closed parenthesis
             if not newList:             # and if newList is empty
-                print("False")          # it prints False because there is no open parenthesis to balance it out
-                return                
+                return False               
             else:
                 newList.pop()           # If there is an open parenthesis to match with the closed one, we remove the last element in the list
 
-    print(len(newList) == 0)                # If the length of the list is 0, there are no unbalanced parentheses and it will return True.
+    return len(newList) == 0               # If the length of the list is 0, there are no unbalanced parentheses and it will return True.
 
 
 # Exercise 2 (version 2)
@@ -49,7 +47,7 @@ def parentheses2(sequence):
         elif char == ")":            # if char is a closed parenthesis,
             counter -= 1             # you decreases the counter variable by 1
             if counter < 0:          # However, if it is a closed parenthesis and the counter is less than zero, it means that there is a closed
-                print(False)         # parenthesis that is not matched by an open one. False is printed
+                return False         # parenthesis that is not matched by an open one. False is printed
                 return
-    print(counter == 0)              # Otherwise, if False isn't already printed, we will print whether or not the counter is zero. If not, it
+    return counter == 0              # Otherwise, if False isn't already printed, we will print whether or not the counter is zero. If not, it
                                      # will print False as well because there is an imbalance.
