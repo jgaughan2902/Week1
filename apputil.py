@@ -19,7 +19,6 @@ def palindrome(word):
             return                       
     print(True)                                # If False is never returned, it will print True because the loop was successfully completed.
 
-palindrome("Sit on a potato pan, Otis.")
 
 # Exercise 2 (version 1)
 
@@ -38,7 +37,6 @@ def parentheses(sequence):
 
     print(len(newList) == 0)                # If the length of the list is 0, there are no unbalanced parentheses and it will return True.
 
-parentheses("(()")
 
 # Exercise 2 (version 2)
 
@@ -55,5 +53,3 @@ def parentheses2(sequence):
                 return
     print(counter == 0)              # Otherwise, if False isn't already printed, we will print whether or not the counter is zero. If not, it
                                      # will print False as well because there is an imbalance.
-
-parentheses2("(())")
